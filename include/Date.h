@@ -14,6 +14,8 @@ public:
 	bool operator<(const Date& right) const { return a_ < right.a_&& m_ < right.m_&& j_ < right.j_; }
 	friend std::istream& operator>>(std::istream& is, Date& date);
 	friend std::ostream& operator<<(std::ostream& os, const Date& date);
+	Date operator-(int n) const;
+	Date operator+(int n) const;
 
 protected:
 private:

@@ -5,7 +5,6 @@ using std::cout;
 using std::endl;
 using std::string;
 
-
 int rechercheDate() {
 	//TODO
 	return 0;
@@ -70,18 +69,18 @@ int main() {
 			}
 			else if (nombre > 0) {
 				cout << "le rendez-vous sera reporté de " << nombre << " jours" << endl;
-				monAgenda.reporter(selectionDate(),selectionHeure(),nombre);
+				monAgenda.reporter(selectionDate(), selectionHeure(), nombre);
 			}
 			else if (nombre < 0) {
 				cout << "le rendez-vous sera avancé de " << nombre << " jours" << endl;
-				monAgenda.avancer(selectionDate(),selectionHeure(),nombre);
+				monAgenda.avancer(selectionDate(), selectionHeure(), nombre);
 			}
 			break;
 		case 4:
 			cout << "Modifier l'heure de rendez-vous" << endl;
 			cout << "Heure (hh:mm) : ";
 			cin >> heure;
-			monAgenda.modifier(selectionDate(),selectionHeure(), heure);
+			monAgenda.modifier(selectionDate(), selectionHeure(), heure);
 			break;
 		case 5:
 			cout << monAgenda;

@@ -24,8 +24,13 @@ void Agenda::avancer(const Date& d, const Heure& h, int n)
 {
 	auto result = data_.find(d);
 	if (result != data_.end()) {
-
-
+		auto hour = result->second.find(h);
+		if (hour != result->second.end()) {
+			std::pair<Heure, std::string> tmp = *hour;
+			result->second.erase(h);
+			Date new_date(d - n);
+			ajouter(new_date, tmp.first, tmp.second);
+		}
 	}
 }
 
@@ -46,7 +51,13 @@ void Agenda::reporter(const Date& d, const Heure& h, int n)
 {
 	auto result = data_.find(d);
 	if (result != data_.end()) {
-		
+		auto hour = result->second.find(h);
+		if (hour != result->second.end()) {
+			std::pair<Heure, std::string> tmp = *hour;
+			result->second.erase(h);
+			Date new_date(d + n);
+			ajouter(new_date, tmp.first, tmp.second);
+		}
 	}
 }
 
