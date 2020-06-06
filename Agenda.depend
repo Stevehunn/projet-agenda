@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\li\documents\agenda\main.cpp
+	<iostream>
+
+1588588054 source:c:\users\li\documents\agenda\src\date.cpp
+	"Date.h"
+
+1588588054 c:\users\li\documents\agenda\include\date.h
+
+1588588054 source:c:\users\li\documents\agenda\src\aganda.cpp
+	"Aganda.h"
+
+1588588429 c:\users\li\documents\agenda\include\aganda.h
+	<map>
+	<string>
+	"Date.h"
+	"Heure.h"
+
+1588588054 c:\users\li\documents\agenda\include\heure.h
+
+1588587881 source:c:\users\li\documents\agenda\src\heure.cpp
+	"Heure.h"
+
