@@ -33,8 +33,10 @@ void Agenda::modifier(const Date& d, const Heure& h)
 {
 	auto result = data_.find(d);
 	if (result != data_.end()) {
-
-
+		auto hour = result->second.find(h);
+		if (hour != result->second.end()) {
+			
+		}
 	}
 }
 

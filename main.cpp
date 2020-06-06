@@ -5,19 +5,6 @@ using std::cout;
 using std::endl;
 using std::string;
 
-void enregisterAgenda() {
-	string fichier = "agenda.txt";
-	cout << endl;
-	cout << "L'agenda va être enregistrer dans le fichier agenda.txt" << endl;
-	//monAgenda.enregistrer(fichier);
-}
-
-void charger() {
-	string fichier = "agenda.txt";
-	cout << endl;
-	cout << "L'agenda va être charger depuis le fichier agenda.txt" << endl;
-	//monAgenda.ouvrir(fichier);
-}
 
 int rechercheDate() {
 	//TODO
