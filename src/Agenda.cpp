@@ -29,13 +29,15 @@ void Agenda::avancer(const Date& d, const Heure& h, int n)
 	}
 }
 
-void Agenda::modifier(const Date& d, const Heure& h)
+void Agenda::modifier(const Date& d, const Heure& old_hour, const Heure& new_hour)
 {
 	auto result = data_.find(d);
 	if (result != data_.end()) {
-		auto hour = result->second.find(h);
+		auto hour = result->second.find(old_hour);
 		if (hour != result->second.end()) {
-			
+			std::string tmp = hour->second;
+			result->second.erase(old_hour);
+			result->second.insert(std::make_pair(new_hour, tmp));
 		}
 	}
 }

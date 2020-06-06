@@ -81,7 +81,7 @@ int main() {
 			cout << "Modifier l'heure de rendez-vous" << endl;
 			cout << "Heure (hh:mm) : ";
 			cin >> heure;
-			monAgenda.modifier(selectionDate(), heure);
+			monAgenda.modifier(selectionDate(),selectionHeure(), heure);
 			break;
 		case 5:
 			cout << monAgenda;
