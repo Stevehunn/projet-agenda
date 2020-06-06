@@ -20,12 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\Aganda.cpp" />
+    <ClCompile Include="src\Agenda.cpp" />
     <ClCompile Include="src\Date.cpp" />
     <ClCompile Include="src\Heure.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Aganda.h" />
+    <ClInclude Include="include\Agenda.h" />
     <ClInclude Include="include\Date.h" />
     <ClInclude Include="include\Heure.h" />
   </ItemGroup>

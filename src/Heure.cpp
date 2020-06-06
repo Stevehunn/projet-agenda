@@ -1,6 +1,6 @@
-#include "Heure.h"
+#include "..\include\Heure.h"
 
-Heure::Heure()
+/*Heure::Heure()
 {
     //ctor
 }
@@ -8,4 +8,4 @@ Heure::Heure()
 Heure::~Heure()
 {
     //dtor
-}
+}*/
