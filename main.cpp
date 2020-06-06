@@ -74,39 +74,39 @@ int main() {
 			cout << monAgenda;
 			break;
 		case 3:
-			selectionDate();
-			selectionHeure();
+			cout << monAgenda;
 			cout << "Ajouter un nombre positif pour reporter le rendez-vous et un nombre négatif pour avancer le rendez-vous " << endl;
 			cin >> nombre;
 			if (nombre == 0) {
 				cout << "Nombre invalide, veuillez rééssayer" << endl;
-				//reporterAvancer();
+				break;
 			}
 			else if (nombre > 0) {
 				cout << "le rendez-vous sera reporté de " << nombre << " jours" << endl;
-				//monAgenda.reporterselectionDate(),selectionHeure(),nombre);
+				monAgenda.reporter(selectionDate(),selectionHeure(),nombre);
 			}
 			else if (nombre < 0) {
 				cout << "le rendez-vous sera avancé de " << nombre << " jours" << endl;
-				//monAgenda.avancer(selectionDate(),selectionHeure(),nombre);
+				monAgenda.avancer(selectionDate(),selectionHeure(),nombre);
 			}
 			break;
 		case 4:
 			cout << "Modifier l'heure de rendez-vous" << endl;
 			cout << "Heure (hh:mm) : ";
 			cin >> heure;
-			monAgenda.modifer(selectionDate(), heure);
+			monAgenda.modifier(selectionDate(), heure);
 			break;
 		case 5:
+			cout << monAgenda;
 			monAgenda.supprimer(selectionDate(), selectionHeure());
 			break;
 		case 6:
 			cout << "L'agenda va être enregistrer dans le fichier agenda.txt" << endl;
-			//monAgenda.enregistrer(fichier);
+			monAgenda.enregistrer("agenda.txt");
 			break;
 		case 7:
 			cout << "L'agenda va être charger depuis le fichier agenda.txt" << endl;
-			//monAgenda.ouvrir(fichier);
+			monAgenda.ouvrir("agenda.txt");
 			break;
 		case 8:
 			cout << "Comment voulez vous trier les rendez vous ? Par date [1] / Par mot clé [2]: ";

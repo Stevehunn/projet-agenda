@@ -22,14 +22,28 @@ void Agenda::ajouter(const Date& d, const Heure& h, const std::string& note)
 
 void Agenda::avancer(const Date& d, const Heure& h, int n)
 {
+	auto result = data_.find(d);
+	if (result != data_.end()) {
+
+
+	}
 }
 
-void Agenda::modifer(const Date& d, const Heure& h)
+void Agenda::modifier(const Date& d, const Heure& h)
 {
+	auto result = data_.find(d);
+	if (result != data_.end()) {
+
+
+	}
 }
 
 void Agenda::reporter(const Date& d, const Heure& h, int n)
 {
+	auto result = data_.find(d);
+	if (result != data_.end()) {
+		
+	}
 }
 
 void Agenda::supprimer(const Date& d, const Heure& h)
