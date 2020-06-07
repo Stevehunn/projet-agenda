@@ -20,6 +20,22 @@ void Agenda::ajouter(const Date& d, const Heure& h, const std::string& note)
 	}
 }
 
+void Agenda::lister(const Date& d, const Heure& h)
+{
+	auto result = data_.find(d);
+	if (result != data_.end()) {
+
+
+
+		auto hour = result->second.find(h);
+		if (hour != result->second.end()) {
+			
+			
+			
+		}
+	}
+}
+
 void Agenda::avancer(const Date& d, const Heure& h, int n)
 {
 	auto result = data_.find(d);
@@ -82,7 +98,8 @@ void Agenda::ouvrir(const char* fichier)
 	if (monFlux.is_open())
 	{
 		cout << "Le fichier est charger" << endl;
-		//Tout est prêt pour la lecture.
+
+		
 	}
 	else
 	{
@@ -96,7 +113,11 @@ void Agenda::enregistrer(const char* fichier)
 
 	if (monFlux.is_open())
 	{
-		//monFlux <<lister<<endl;
+		for (auto itr = data_.begin(); itr != data_.end(); ++itr) {
+			for (const std::pair<Heure, std::string>& elm : itr->second) {
+				monFlux << itr->first << ";" << elm.first << ";\"" << elm.second << "\"" << std::endl;
+			}
+		}
 	}
 	else
 	{
