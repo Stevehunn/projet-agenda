@@ -54,7 +54,11 @@ int main() {
 		switch (choix) {
 		case 1:
 			cout << "Ajouter une note du rendez-vous" << endl;
-			cin >> rdvNote;
+			cin.clear(); // clear the buffer
+			cin.sync();
+			cin.ignore();
+			std::getline(cin, rdvNote);// >> rdvNote;
+			cout << endl;
 			monAgenda.ajouter(selectionDate(), selectionHeure(), rdvNote);
 			break;
 		case 2:
@@ -96,7 +100,7 @@ int main() {
 			monAgenda.ouvrir("agenda.txt");
 			break;
 		case 8:
-			cout << "Comment voulez vous trier les rendez vous ? Par date [1] / Par mot clé [2] / Par numéro de rendez vous [3]: ";
+			cout << "Comment voulez vous trier les rendez vous ? Par date [1] / Par mot clé [2] / Par numéro de rendez-vous [3]: ";
 			cin >> choix2;
 			switch (choix2) {
 			case '1':

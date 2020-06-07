@@ -22,7 +22,6 @@ void Agenda::ajouter(const Date& d, const Heure& h, const std::string& note)
 
 void Agenda::afficher(const int numero)
 {
-
 	if (data_.size() == 0) {
 		cout << "Il n'y a pas de rendez-vous enregisté" << std::endl;
 	}
@@ -38,13 +37,10 @@ void Agenda::afficher(const int numero)
 				{
 					compteur++;
 				}
-				
 			}
 		}
 	}
-
 }
-
 
 void Agenda::avancer(const Date& d, const Heure& h, int n)
 {
@@ -108,9 +104,6 @@ void Agenda::ouvrir(const char* fichier)
 	if (monFlux.is_open())
 	{
 		cout << "Le fichier est charger" << endl;
-
-		
-		
 	}
 	else
 	{
@@ -155,4 +148,3 @@ std::ostream& operator<<(std::ostream& os, const Agenda& agenda)
 
 	return os;
 }
-

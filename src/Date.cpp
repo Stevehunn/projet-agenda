@@ -8,7 +8,7 @@ Date::~Date() {
 
 std::ostream& operator<<(std::ostream& os, const Date& dates)
 {
-	os << dates.a_ << "/" << dates.m_ << "/" << dates.j_ << std::endl;
+	os << dates.a_ << "/" << dates.m_ << "/" << dates.j_; //<< std::endl;
 	return os;
 }
 

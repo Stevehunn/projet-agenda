@@ -29,6 +29,6 @@ std::istream& operator>>(std::istream& is, Heure& heure)
 }
 
 std::ostream& operator<<(std::ostream& os, const Heure& heure) {
-	os << heure.h_ << ":" << heure.m_ << std::endl;
+	os << heure.h_ << ":" << heure.m_;// << std::endl;
 	return os;
 }
