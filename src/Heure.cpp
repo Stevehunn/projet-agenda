@@ -1,11 +1,21 @@
 #include "..\include\Heure.h"
 
-/*Heure::Heure()
+Heure::Heure(std::string str) : Heure()
 {
-	//ctor
+	std::vector<std::string> result;
+	std::istringstream tokenStream(str);
+	std::string token;
+	while (std::getline(tokenStream, token, ':'))
+	{
+		result.push_back(token);
+	}
+	if (result.size() == 2) {
+		h_ = std::stoi(result[0]);
+		m_ = std::stoi(result[1]);
+	}
 }
 
-Heure::~Heure()
+/*Heure::~Heure()
 {
 	//dtor
 }*/

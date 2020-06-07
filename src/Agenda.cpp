@@ -103,6 +103,18 @@ void Agenda::ouvrir(const char* fichier)
 
 	if (monFlux.is_open())
 	{
+		std::vector<std::string> result;
+		std::string token;
+		std::string line;
+		while (std::getline(monFlux, line, '\n')) {
+			std::istringstream tokenStream(line);
+			while (std::getline(tokenStream, token, ';'))
+			{
+				result.push_back(token);
+			}
+			ajouter(Date(result[0]), Heure(result[1]), result[2]);
+			result.clear();
+		}
 		cout << "Le fichier est charger" << endl;
 	}
 	else

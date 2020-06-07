@@ -17,14 +17,14 @@ int rechercherMot() {
 
 Date selectionDate() {
 	Date rdvDate;
-	cout << "Selectionner la date du rendez-vous que vous souhaitez ajouter" << endl;
+	cout << "Selectionner la date du rendez-vous que vous souhaitez ajouter avec le format suivant (aaaa/mm/jj)" << endl;
 	cin >> rdvDate;
 	return rdvDate;
 }
 
 Heure selectionHeure() {
 	Heure rdvHeure;
-	cout << "Selectionner l'heure du rendez-vous que vous souhaitez ajouter" << endl;
+	cout << "Selectionner l'heure du rendez-vous que vous souhaitez ajouter avec le format suivant (hh:mm)" << endl;
 	cin >> rdvHeure;
 	return rdvHeure;
 }

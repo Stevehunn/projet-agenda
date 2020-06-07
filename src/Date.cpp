@@ -1,9 +1,20 @@
 #include "..\include\Date.h"
 
-Date::Date() {
-}
+Date::Date(std::string str): Date() {
 
-Date::~Date() {
+	std::vector<std::string> result;
+	std::istringstream tokenStream(str);
+	std::string token;
+
+	while (std::getline(tokenStream, token, '/'))
+	{
+		result.push_back(token);
+	}
+	if (result.size() == 3) {
+		a_ = std::stoi(result[0]);
+		m_ = std::stoi(result[1]);
+		j_ = std::stoi(result[2]);
+	}
 }
 
 std::ostream& operator<<(std::ostream& os, const Date& dates)
