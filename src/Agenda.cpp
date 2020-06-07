@@ -20,21 +20,31 @@ void Agenda::ajouter(const Date& d, const Heure& h, const std::string& note)
 	}
 }
 
-void Agenda::lister(const Date& d, const Heure& h)
+void Agenda::afficher(const int numero)
 {
-	auto result = data_.find(d);
-	if (result != data_.end()) {
 
-
-
-		auto hour = result->second.find(h);
-		if (hour != result->second.end()) {
-			
-			
-			
+	if (data_.size() == 0) {
+		cout << "Il n'y a pas de rendez-vous enregisté" << std::endl;
+	}
+	else {
+		int compteur = 1;
+		for (auto itr = data_.begin(); itr != data_.end(); ++itr) {
+			for (const std::pair<Heure, std::string>& elm : itr->second) {
+				if (numero == compteur) {
+					cout << "\t\t" << elm.first << "\t" << elm.second << "\t" << compteur << std::endl;
+					return;
+				}
+				else
+				{
+					compteur++;
+				}
+				
+			}
 		}
 	}
+
 }
+
 
 void Agenda::avancer(const Date& d, const Heure& h, int n)
 {
@@ -99,6 +109,11 @@ void Agenda::ouvrir(const char* fichier)
 	{
 		cout << "Le fichier est charger" << endl;
 
+		for (auto itr = data_.begin(); itr != data_.end(); ++itr) {
+			for (const std::pair<Heure, std::string>& elm : itr->second) {
+				monFlux << itr->first << ";" << elm.first << ";\"" << elm.second << "\"" << std::endl;
+			}
+		}
 		
 	}
 	else
@@ -131,10 +146,12 @@ std::ostream& operator<<(std::ostream& os, const Agenda& agenda)
 		os << "Il n'y a pas de rendez-vous enregisté" << std::endl;
 	}
 	else {
+		int compteur = 1;
 		for (auto itr = agenda.data_.begin(); itr != agenda.data_.end(); ++itr) {
 			os << '\t' << itr->first;
 			for (const std::pair<Heure, std::string>& elm : itr->second) {
-				os << "\t\t" << elm.first << "\t" << elm.second << std::endl;
+				os << "\t\t" << elm.first << "\t" << elm.second << "\t" << compteur << std::endl;
+				compteur++;
 			}
 		}
 		os << std::endl;
@@ -142,3 +159,4 @@ std::ostream& operator<<(std::ostream& os, const Agenda& agenda)
 
 	return os;
 }
+
