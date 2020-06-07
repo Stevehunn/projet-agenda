@@ -12,7 +12,7 @@ public:
 	Date() = default;
 	Date(std::string str);
 	virtual ~Date() = default;
-	bool operator<(const Date& right) const { return a_ < right.a_&& m_ < right.m_&& j_ < right.j_; }
+	bool operator<(const Date& right) const { return( a_ < right.a_)||(a_ == right.a_ && m_ < right.m_)||(a_ ==right.a_&& m_ ==right.m_&& j_ < right.j_); }
 	friend std::istream& operator>>(std::istream& is, Date& date);
 	friend std::ostream& operator<<(std::ostream& os, const Date& date);
 	Date operator-(int n) const;

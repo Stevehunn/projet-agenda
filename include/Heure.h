@@ -11,7 +11,7 @@ public:
 	Heure() = default;
 	Heure(std::string str);
 	virtual ~Heure() = default;
-	bool operator<(const Heure& right) const { return h_ < right.h_&& m_ < right.m_; }
+	bool operator<(const Heure& right) const { return (h_ < right.h_) || (h_ ==right.h_ && m_ < right.m_); }
 	friend std::istream& operator>>(std::istream& is, Heure& heure);
 	friend std::ostream& operator<<(std::ostream& os, const Heure& heure);
 protected:
