@@ -109,11 +109,7 @@ void Agenda::ouvrir(const char* fichier)
 	{
 		cout << "Le fichier est charger" << endl;
 
-		for (auto itr = data_.begin(); itr != data_.end(); ++itr) {
-			for (const std::pair<Heure, std::string>& elm : itr->second) {
-				monFlux << itr->first << ";" << elm.first << ";\"" << elm.second << "\"" << std::endl;
-			}
-		}
+		
 		
 	}
 	else
