@@ -46,8 +46,8 @@ int main() {
 		cout << "4. modifier l'heure d'un rendez-vous" << endl;
 		cout << "5. supprimer un rendez-vous" << endl;
 		cout << "6. enregistrer l'agenda dans un fichier texte" << endl;
-		cout << "7. charger l'agenda à partir d'un fichier texte" << endl;
-		cout << "8. rechercher les rendez-vous par une date/mot clé/numéro " << endl;
+		cout << "7. charger l'agenda a partir d'un fichier texte" << endl;
+		cout << "8. rechercher les rendez-vous par une date/mot cle/numero " << endl;
 		cout << "9. Quitter" << endl;
 		cout << "Votre choix : ";
 		cin >> choix;
