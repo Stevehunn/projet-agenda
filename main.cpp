@@ -34,6 +34,7 @@ int main() {
 	int choix = 0;
 	int choix2 = 0;
 	int nombre = 0;
+	int numero = 0;
 	string rdvNote;
 	Heure heure;
 	for (;;) {
@@ -46,7 +47,7 @@ int main() {
 		cout << "5. supprimer un rendez-vous" << endl;
 		cout << "6. enregistrer l'agenda dans un fichier texte" << endl;
 		cout << "7. charger l'agenda à partir d'un fichier texte" << endl;
-		cout << "8. rechercher les rendez-vous par une date/mot clé " << endl;
+		cout << "8. rechercher les rendez-vous par une date/mot clé/numéro " << endl;
 		cout << "9. Quitter" << endl;
 		cout << "Votre choix : ";
 		cin >> choix;
@@ -95,7 +96,7 @@ int main() {
 			monAgenda.ouvrir("agenda.txt");
 			break;
 		case 8:
-			cout << "Comment voulez vous trier les rendez vous ? Par date [1] / Par mot clé [2]: ";
+			cout << "Comment voulez vous trier les rendez vous ? Par date [1] / Par mot clé [2] / Par numéro de rendez vous [3]: ";
 			cin >> choix2;
 			switch (choix2) {
 			case '1':
@@ -103,6 +104,11 @@ int main() {
 				break;
 			case '2':
 				rechercherMot();
+				break;
+			case '3':
+				cout << "Ajouter le numéro de rendez-vous" << endl;
+				cin >> numero;
+				monAgenda.afficher(numero);
 				break;
 			default:
 				cout << "Choix inconnu" << endl;
